@@ -76,3 +76,33 @@ XXXXXXX____X__X_X__XX__XX
 % ./sqrd qr.txt
 sample_data
 ```
+
+
+QRコードの作成
+==============
+
+任意のデータを埋め込んだQRコードを作成します.  
+```
+% ./createqr.py -d "This is sample text. FLAG_{ponponpain}" -o sample/qrcode1.png
+```
+  
+TODOに記述してある通り, 余白が出力されます.  
+適当な画像編集ソフトで切り出した方がいいです.  
+
+
+QRコードの明暗をテキストに変換
+==============================
+
+QRコードの明暗を1ピクセル毎にXと_に変換し, sqrd.pyで読み取れるようにします.  
+```
+% ./qr2txt.py -f sample/qrcode2.png > sample/qr2txt2.txt
+```
+
+
+TODO
+====
+
+* createqr.py
+    * 作成したQRコードの余白は出力しないようにする  
+    * 先頭に余分な行が出力されないようにする
+
