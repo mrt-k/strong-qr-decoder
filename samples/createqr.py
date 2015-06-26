@@ -1,7 +1,7 @@
 import pyqrcode
 import sys
 
-data = "sample text"
+data = sys.argv[1]
 qr = pyqrcode.create(data)
 
 for i in qr.code:
@@ -12,3 +12,5 @@ for i in qr.code:
             sys.stdout.write('_')
     print ''
 
+if '--save' in sys.argv:
+    qr.png('./qr.png')
